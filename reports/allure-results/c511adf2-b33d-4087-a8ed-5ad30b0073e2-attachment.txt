@@ -1,0 +1,14 @@
+[INFO 2022-12-14 15:40:47] -----gerando token ou buscando do redis-----
+[INFO 2022-12-14 15:40:47] Payload:
+    {}
+[INFO 2022-12-14 15:40:47] Headers:
+    {
+     "Content-Type": "application/json",
+     "Authorization": "1234"
+    }
+[INFO 2022-12-14 15:40:48] URL: http://3.84.101.173:8001/create-qa
+[INFO 2022-12-14 15:40:48] Response:
+    Looks like there is an issue with the Javascript driving this mock TypeError: Cannot get property "name" of null in <eval> at line number 8
+[INFO 2022-12-14 15:40:48] Status code Esperado: 500
+[INFO 2022-12-14 15:40:48] Status code Recebido: 500
+[INFO 2022-12-14 15:40:48] -----realizando qualquer acao necessaria-----

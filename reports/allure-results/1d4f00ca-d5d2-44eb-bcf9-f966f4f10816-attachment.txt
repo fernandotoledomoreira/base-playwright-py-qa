@@ -1,0 +1,20 @@
+[INFO 2022-12-14 15:40:47] -----gerando token ou buscando do redis-----
+[INFO 2022-12-14 15:40:47] Payload:
+    {
+     "name": "teste",
+     "years": 20
+    }
+[INFO 2022-12-14 15:40:47] Headers:
+    {
+     "Content-Type": "",
+     "Authorization": ""
+    }
+[INFO 2022-12-14 15:40:48] URL: http://3.84.101.173:8001/create-qa
+[INFO 2022-12-14 15:40:48] Response:
+    {
+     "code": "UNAUTHORIZED",
+     "message": "Not authorized"
+    }
+[INFO 2022-12-14 15:40:48] Status code Esperado: 401
+[INFO 2022-12-14 15:40:48] Status code Recebido: 401
+[INFO 2022-12-14 15:40:48] -----realizando qualquer acao necessaria-----

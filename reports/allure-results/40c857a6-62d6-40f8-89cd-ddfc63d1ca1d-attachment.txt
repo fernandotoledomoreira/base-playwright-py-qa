@@ -1,0 +1,21 @@
+[INFO 2022-12-14 15:40:48] -----gerando token ou buscando do redis-----
+[INFO 2022-12-14 15:40:48] Payload:
+    {
+     "name": "teste",
+     "years": 20
+    }
+[INFO 2022-12-14 15:40:48] Headers:
+    {
+     "Authorization": "1234"
+    }
+[INFO 2022-12-14 15:40:50] URL: http://3.84.101.173:8001/create-qa
+[INFO 2022-12-14 15:40:50] Response:
+    {
+     "uuid": "6e9b7e12-b7c5-4c13-9a66-cbbc4ed97007",
+     "createDate": "2022-12-14T18:40:50+0000",
+     "name": "teste",
+     "years": 20
+    }
+[INFO 2022-12-14 15:40:50] Status code Esperado: 201
+[INFO 2022-12-14 15:40:50] Status code Recebido: 201
+[INFO 2022-12-14 15:40:50] -----realizando qualquer acao necessaria-----

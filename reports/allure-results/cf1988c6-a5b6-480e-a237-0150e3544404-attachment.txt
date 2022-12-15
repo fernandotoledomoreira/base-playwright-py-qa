@@ -1,0 +1,15 @@
+[INFO 2022-12-14 15:40:52] -----gerando token ou buscando do redis-----
+[INFO 2022-12-14 15:40:52] Payload:
+    {
+     "name": "teste",
+     "years": false
+    }
+[INFO 2022-12-14 15:40:53] URL: http://3.84.101.173:8001/create-qa
+[INFO 2022-12-14 15:40:53] Response:
+    {
+     "code": "BAD_REQUEST",
+     "message": "Data informed in payload is incorrect"
+    }
+[INFO 2022-12-14 15:40:53] Status code Esperado: 400
+[INFO 2022-12-14 15:40:53] Status code Recebido: 400
+[INFO 2022-12-14 15:40:53] -----realizando qualquer acao necessaria-----
