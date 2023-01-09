@@ -60,6 +60,6 @@ headers = {
 }
 
 # Função do playwright para requisição do Slack
-with sync_playwright() as p:
-    context = p.request.new_context(base_url=uri_webhook)
-    context.post(f"{uri_webhook}", data=payload, headers=headers)
+# with sync_playwright() as p:
+#     context = p.request.new_context(base_url=uri_webhook)
+#     context.post(f"{uri_webhook}", data=payload, headers=headers)
