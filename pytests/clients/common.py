@@ -73,7 +73,11 @@ class Common:
             fields = field.split(".")
             if type(payload[fields[0]]) == list:
                 payload[fields[0]][0][fields[1]][fields[2]] = Common.values_change(value)
-            if type(payload[fields[0]]) == dict:
+
+            if type(payload[fields[0]][fields[1]]) == list:
+                payload[fields[0]][fields[1]][0][fields[2]] = Common.values_change(value)
+
+            if type(payload[fields[0]][fields[1]]) == dict:
                 payload[fields[0]][fields[1]][fields[2]] = Common.values_change(value)
         else:
             payload[field] = Common.values_change(value)
@@ -114,7 +118,7 @@ class Common:
 
     # Método para remover campo do header
     @staticmethod
-    def delete_header(token, common_header, header):
+    def delete_header(common_header, header):
         if header == "all":
             common_header = {}
             return common_header
