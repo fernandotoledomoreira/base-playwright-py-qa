@@ -1,0 +1,12 @@
+{
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "pytests"
+    ],
+    "python.envFile": ".env",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.wordWrap": "on",
+        "editor.wordWrapColumn": 80
+    }    
+}

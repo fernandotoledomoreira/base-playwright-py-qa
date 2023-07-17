@@ -1,0 +1,13 @@
+pytest
+playwright
+pytest-playwright
+boto3
+python-dotenv
+logzero
+jsonschema
+pytest-xdist
+faker
+psycopg2-binary
+hypothesis
+allure-python-commons
+git+ssh://git@github.com/dock-tech/allure-pytest-dock-lib.git@master
