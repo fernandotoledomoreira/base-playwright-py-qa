@@ -1,1 +1,0 @@
-# base-playwright-py-qa

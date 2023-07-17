@@ -1,0 +1,17 @@
+{
+	"name": "Playwright com Python",
+	"build": {
+		"dockerfile": "devcontainer.Dockerfile"
+	},
+	"extensions": [
+		"adpyke.codesnap",
+		"ms-vscode-remote.remote-containers",
+		"vscode-icons-team.vscode-icons",
+		"ms-python.python",
+		"ms-azuretools.vscode-docker",
+		"christian-kohler.path-intellisense"
+	],
+	"settings": {},
+	"forwardPorts": [],
+	"postCreateCommand": ""
+}

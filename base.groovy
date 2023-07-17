@@ -33,6 +33,11 @@ pipeline {
     )
   }
     stages {
+      stage('CLEANING WORKDIR') {
+         steps {
+             deleteDir()
+         }
+      }
       stage('RUNNING PLAYWRIGHT TESTS') {
         steps {
           catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
@@ -49,7 +54,11 @@ pipeline {
     post {
       always{
       echo "TESTS FINISHED"
-        sh 'mkdir -p ${WORKSPACE}/allure-results && cp -R /base-playwright-py-qa/reports/allure-results/* ${WORKSPACE}/allure-results'
+        sh 'cd /base-playwright-py-qa/reports && zip allure-results allure-results/*'
+        sh 'cp /base-playwright-py-qa/reports/allure-results.zip ${WORKSPACE}/'
+        sh 'cd /base-playwright-py-qa/reports && rm -R allure-results.zip'
+        sh 'cd ${WORKSPACE} && unzip allure-results.zip'
+        sh 'cd ${WORKSPACE} && rm -R allure-results.zip'
          allure([
           includeProperties: true,
           jdk: '',
@@ -65,10 +74,10 @@ pipeline {
              sh 'cd /base-playwright-py-qa && python3 slack/slack_finish_testes_notify.py'
              slackSend(channel: "#reports-cucumber-tests", color: "#00FF00", message: "Tests Finished \n Command Run: ${params.command_run} \n Build Number: ${BUILD_NUMBER} \n Pipeline: ${JOB_NAME} \n Report Link: https://report-tests.devtools.caradhras.io/${JOB_NAME}/${params.env}/${BUILD_NUMBER}/index.html \n Pipeline Results: ${currentBuild.result}")
         } else if ("${currentBuild.result}" == "UNSTABLE") {
-            sh 'cd /base-playwright-py-qa && python3 slack/slack_finish_testes_notify.py'
+             sh 'cd /base-playwright-py-qa && python3 slack/slack_finish_testes_notify.py'
             slackSend(channel: "#reports-cucumber-tests", color: "#FF0000", message: "Tests Finished \n Command Run: ${params.command_run} \n Build Number: ${BUILD_NUMBER} \n Pipeline: ${JOB_NAME} \n Report Link: https://report-tests.devtools.caradhras.io/${JOB_NAME}/${params.env}/${BUILD_NUMBER}/index.html \n Pipeline Results: ${currentBuild.result}")
         } else {
-            sh 'cd /base-playwright-py-qa && python3 slack/slack_finish_testes_notify.py'
+             sh 'cd /base-playwright-py-qa && python3 slack/slack_finish_testes_notify.py'
             slackSend(channel: "#reports-cucumber-tests", color: "", message: "Problem Tests \n Command Run: ${params.command_run} \n Build Number: ${BUILD_NUMBER} \n Pipeline: ${JOB_NAME} \n Report Link: https://report-tests.devtools.caradhras.io/${JOB_NAME}/${params.env}/${BUILD_NUMBER}/index.html \n Pipeline Results: ${currentBuild.result}")
         }
         }
